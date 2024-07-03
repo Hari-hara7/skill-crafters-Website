@@ -386,3 +386,19 @@ footer ul li a {
 .bottom-nav .nav-item:hover {
     color: green; /* Change to desired hover color */
 }
+
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem; /* Adjust the size for tablets and smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem; /* Adjust the size for mobile devices */
+  }
+  .roadmaps h2 {
+    font-size: 1.2rem; /* Adjust the size for mobile devices */
+  }
+}
