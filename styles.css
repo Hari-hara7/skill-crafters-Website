@@ -402,3 +402,48 @@ footer ul li a {
     font-size: 1.2rem; /* Adjust the size for mobile devices */
   }
 }
+
+
+
+.success-message {
+  background-color: #f0f7fa;
+  border: 1px solid #3b9dbd;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+}
+
+.success-icon {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  font-size: 36px;
+  color: #3b9dbd;
+}
+
+.success-content {
+  flex: 1 1 auto;
+}
+
+.success-content p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.success-content a {
+  color: #3b9dbd;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.success-content a:hover {
+  color: #297a94;
+}
+
+
+
