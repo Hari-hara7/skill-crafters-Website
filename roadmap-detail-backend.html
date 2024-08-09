@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Development Roadmap - Skill Crafters</title>
+    <link rel="stylesheet" href="details.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">Skill Crafters</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="roadmaps.html">Roadmaps</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="roadmap-detail">
+            <div class="breadcrumb">
+                <a href="roadmaps.html">Roadmaps</a> &gt; <span>Backend Development</span>
+            </div>
+
+            <div class="roadmap-header">
+                <img src="backend-roadmap.jpg" alt="Backend Development Roadmap">
+                <div class="roadmap-info">
+                    <h2>Backend Development Roadmap</h2>
+                    <p>Discover the essential skills required to build and maintain the server-side of web applications. This roadmap covers server-side languages, databases, APIs, and more.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-highlights">
+                <h3>What You'll Learn:</h3>
+                <ul>
+                    <li>Server-Side Languages: Understand languages like Node.js, Python, Ruby, etc.</li>
+                    <li>Databases: Work with SQL and NoSQL databases.</li>
+                    <li>APIs: Learn to create and consume APIs.</li>
+                    <li>Security: Implement security practices to protect your applications.</li>
+                    <li>Scalability: Design scalable systems and handle high traffic.</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-resources">
+                <h3>Resources & Links:</h3>
+                <ul>
+                    <li><a href="#">Introduction to Node.js</a></li>
+                    <li><a href="#">Working with SQL Databases</a></li>
+                    <li><a href="#">Building APIs with Express</a></li>
+                    <li><a href="#">Understanding Authentication</a></li>
+                    <li><a href="#">Scalable System Design</a></li>
+                </ul>
+            </div>
+
+            <div class="pricing">
+                <h3>Pricing</h3>
+                <p>Get lifetime access to this roadmap and all its resources.</p>
+                <p class="price">$49.99</p>
+                <button id="buy-now" class="btn-primary">Buy Now</button>
+            </div>
+
+            <!-- Payment Modal -->
+            <div id="payment-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Select Payment Method</h2>
+                    <div class="payment-options">
+                        <div class="payment-method">
+                          
+                            <p>Google Pay</p>
+                            <img src="google pay.jpg" alt="Google Pay QR Code">
+                        </div>
+                        <div class="payment-method">
+                            <img src="paytem.jpg" alt="PayPal">
+                            <p>PayPal</p>
+                            <img src="qr-code-paypal.png" alt="PayPal QR Code">
+                        </div>
+                        <div class="payment-method">
+                            <img src="stripe.png" alt="Stripe">
+                            <p>Stripe</p>
+                        </div>
+                    </div>
+                    <form id="payment-form" action="https://usebasin.com/f/6bfedd3896c1" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                         
+                        </div>
+                        <div class="form-group">
+                            <label for="technologyname">Technology Name</label>
+                            <input type="text" id="technologyname" name="technologyname" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email ID</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transaction">Transaction Number</label>
+                            <input type="text" id="transaction" name="transaction" placeholder="Enter transaction number" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Confirm Payment</button>
+                    </form>
+                    <div id="form-feedback" class="form-feedback" style="display: none;">
+                         <p>Thank you! Your payment details have been received. Your premium roadmap will be sent to your email within 1-2 hours</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="related-roadmaps">
+                <h3>Related Roadmaps</h3>
+                <div class="roadmap-container">
+                    <div class="card">
+                        <img src="frontend-icon.png" alt="Frontend Development">
+                        <h4>Frontend Development</h4>
+                        <a href="roadmap-detail-frontend.html" class="view-roadmap">View Roadmap</a>
+                    </div>
+
+                    <div class="card">
+                        <img src="fullstack-icon.png" alt="Full Stack Development">
+                        <h4>Full Stack Development</h4>
+                        <a href="roadmap-detail-fullstack.html" class="view-roadmap">View Roadmap</a>
+                    </div>
+
+                    <div class="card">
+                        <img src="devops-icon.png" alt="DevOps">
+                        <h4>DevOps</h4>
+                        <a href="roadmap-detail-devops.html" class="view-roadmap">View Roadmap</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">Social Media</a></li>
+        </ul>
+        <p>&copy; 2024 Skill Crafters. All rights reserved.</p>
+    </footer>
+
+    <script>
+            // Script for handling the modal
+            const modal = document.getElementById("payment-modal");
+        const btn = document.getElementById("buy-now");
+        const span = document.getElementsByClassName("close")[0];
+        const form = document.getElementById("payment-form");
+        const feedback = document.getElementById("form-feedback");
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset(); // Reset form fields
+                    feedback.style.display = 'block'; // Show feedback message
+                } else {
+                    alert('There was a problem with the submission. Please try again.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('There was a problem with the submission. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

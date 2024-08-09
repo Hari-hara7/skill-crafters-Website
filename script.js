@@ -1,5 +1,26 @@
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+// Modal functionality for payment
+document.getElementById('buy-now').addEventListener('click', function() {
+  document.getElementById('payment-modal').style.display = 'flex';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+  document.getElementById('payment-modal').style.display = 'none';
+});
+
+
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
 
