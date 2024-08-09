@@ -3,11 +3,24 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   color: #ffffff;
-  background: url('2527292.jpg') no-repeat center center fixed;
+  background: url('6385146.jpg') no-repeat center center fixed;
   background-size: cover;
   overflow-x: hidden;
 }
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 900
 
+.playfair-display-uniquifier {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 /* Header Styles */
 header {
   background: rgba(0, 0, 0, 0.8);

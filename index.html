@@ -6,11 +6,19 @@
     <title>Skill Crafters</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">Skill Crafters</div>
+            <div class="logo anton-regular">Skill Crafters</div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -25,18 +33,89 @@
 
     <main>
         <section class="hero">
-            <h1>Unlock Your Tech Potential</h1>
-            <p>Explore comprehensive roadmaps for various technologies and start your journey today.</p>
+            <h1 class="anton-regular">Unlock Your Tech Potential</h1>
+            <p class="playfair-display-uniquifier">Explore comprehensive roadmaps for various technologies and start your journey today.</p>
             <a href="roadmaps.html" class="cta-button">Browse Roadmaps</a>
         </section>
 
         <section class="featured-roadmaps">
             <div class="card">
-                <img src="frontend-icon.png" alt="Frontend">
+                <i class="fab fa-html5"></i>
                 <h3>Frontend Development</h3>
                 <p>Learn the latest in frontend technology.</p>
-                <a href="roadmap-detail.html" class="learn-more">Learn More</a>
+                <a href="roadmap-detail-frontend.html" class="learn-more">Learn More</a>
             </div>
+            
+            <div class="card">
+                <i class="fas fa-server"></i>
+                <h3>Backend Development</h3>
+                <p>Master the server-side technologies and databases.</p>
+                <a href="roadmap-detail-backend.html" class="learn-more">Learn More</a>
+            </div>
+            
+            <div class="card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Full Stack Development</h3>
+                <p>Become proficient in both frontend and backend development.</p>
+                <a href="roadmap-detail-fullstack.html" class="learn-more">Learn More</a>
+            </div>
+            
+            <div class="card">
+                <i class="fab fa-android"></i>
+                <h3>Android Development</h3>
+                <p>Build cutting-edge mobile apps for Android devices.</p>
+                <a href="roadmap-detail-android.html" class="learn-more">Learn More</a>
+            </div>
+            
+            <div class="card">
+                <i class="fab fa-apple"></i>
+                <h3>iOS Development</h3>
+                <p>Create stunning mobile apps for iOS platforms.</p>
+                <a href="roadmap-detail-ios.html" class="learn-more">Learn More</a>
+            </div>
+            
+            <div class="card">
+                <i class="fas fa-lock"></i>
+                <h3>Blockchain Roadmap</h3>
+                <p>Dive deep into blockchain technology and decentralized systems.</p>
+                <a href="roadmap-detail-blockchain.html" class="learn-more">Learn More</a>
+            </div>
+            
+            <div class="card">
+                <i class="fas fa-database"></i>
+                <h3>Data Science</h3>
+                <p>Explore the world of data analysis and machine learning.</p>
+                <a href="roadmap-detail-datascience.html" class="learn-more">Learn More</a>
+            </div>
+            
+            <div class="card">
+                <i class="fas fa-cloud"></i>
+                <h3>DevOps</h3>
+                <p>Streamline development and operations for faster delivery.</p>
+                <a href="roadmap-detail-devops.html" class="learn-more">Learn More</a>
+            </div>
+            
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>Developer Relations</h3>
+                <p>Enhance your skills in managing developer communities.</p>
+                <a href="roadmap-detail-devrelations.html" class="learn-more">Learn More</a>
+            </div>
+            
+            <div class="card">
+                <i class="fab fa-react"></i>
+                <h3>Flutter Development</h3>
+                <p>Create beautiful multi-platform applications with Flutter.</p>
+                <a href="roadmap-detail-flutter.html" class="learn-more">Learn More</a>
+            </div>
+            
+            <div class="card">
+                <i class="fas fa-code-branch"></i>
+                <h3>Open Source Roadmap</h3>
+                <p>Contribute to open source projects and build your portfolio.</p>
+                <a href="roadmap-detail-opensource.html" class="learn-more">Learn More</a>
+            </div>
+            
             <!-- Add more cards as needed -->
         </section>
     </main>
