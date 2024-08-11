@@ -6,7 +6,16 @@
     <title>About Us - Skill Crafters</title>
     <link rel="stylesheet" href="style.css">
     <script src="scripts.js" defer></script>
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Baskervville+SC&family=Bebas+Neue&family=Black+Ops+One&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Baskervville+SC&family=Bebas+Neue&family=Black+Ops+One&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Kalnia+Glaze:wght@100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Oswald:wght@200..700&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Baskervville+SC&family=Bebas+Neue&family=Black+Ops+One&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Kalnia+Glaze:wght@100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Oswald:wght@200..700&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> 
+  <style>
         /* General Styles */
         body {
             margin: 0;
@@ -15,6 +24,11 @@
             background: url('6005990.jpg') no-repeat center center fixed;
             background-size: cover;
         }
+        .anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
        /* General Styles */
 header {
@@ -134,7 +148,7 @@ nav ul li a:hover {
         }
 
         .about {
-            background: rgba(0, 0, 0, 0.7); /* Transparent background for better readability */
+           /* Transparent background for better readability */
             padding: 40px;
             border-radius: 8px;
         }
@@ -205,6 +219,24 @@ nav ul li a:hover {
         footer ul li a:hover {
             text-decoration: underline;
         }
+       
+.kalnia-glaze-uniquifier {
+  font-family: "Kalnia Glaze", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+
+.platypi-uniquifier {
+  font-family: "Platypi", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
     </style>
 </head>
 <body>
@@ -231,14 +263,14 @@ nav ul li a:hover {
 
     <main>
         <section class="about">
-            <h1>About Us</h1>
-            <p>At Skill Crafters, our mission is to empower tech enthusiasts and professionals with comprehensive roadmaps and resources for mastering various technologies. We strive to provide clear, actionable guidance to help individuals succeed in their tech careers and stay ahead in an ever-evolving industry.</p>
-            <p>Founded with the goal of making technology education more accessible and structured, we offer detailed roadmaps covering frontend development, backend technologies, DevOps, data science, and more. Our aim is to support learners at every stage of their journey, from beginners to advanced practitioners.</p>
+            <h1 class="anton-regular">About Us</h1>
+            <p class="platypi-uniquifier">At Skill Crafters, our mission is to empower tech enthusiasts and professionals with comprehensive roadmaps and resources for mastering various technologies. We strive to provide clear, actionable guidance to help individuals succeed in their tech careers and stay ahead in an ever-evolving industry.</p>
+            <p class="platypi-uniquifier">Founded with the goal of making technology education more accessible and structured, we offer detailed roadmaps covering frontend development, backend technologies, DevOps, data science, and more. Our aim is to support learners at every stage of their journey, from beginners to advanced practitioners.</p>
             <div class="team">
                 <div class="team-member">
                    
-                    <h3>Hariharanath</h3>
-                    <p>CEO & Founder | Developer</p>
+                    <h3 class="anton-regular">Hariharanath</h3>
+                    <p class="platypi-uniquifier">CEO & Founder | Developer</p>
                 </div>
             </div>
         </section>
