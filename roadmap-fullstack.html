@@ -81,26 +81,34 @@
                     <span class="close">&times;</span>
                     <h2>Select Payment Method</h2>
                     <div class="payment-options">
-                        <div class="payment-method">
-                            <img src="google-pay.png" alt="Google Pay">
+                        <button class="payment-button" id="google-pay-button">
+                            <i class="fab fa-google-pay fa-2x"></i>
                             <p>Google Pay</p>
-                            <img src="qr-code-google-pay.png" alt="Google Pay QR Code">
-                        </div>
-                        <div class="payment-method">
-                            <img src="paypal.png" alt="PayPal">
-                            <p>PayPal</p>
-                            <img src="qr-code-paypal.png" alt="PayPal QR Code">
-                        </div>
-                        <div class="payment-method">
-                            <img src="stripe.png" alt="Stripe">
+                        </button>
+                        <button class="payment-button" id="paytm-button">
+                            <i class="fab fa-paypal fa-2x"></i> <!-- Paytm does not have a Font Awesome icon, using PayPal as an alternative -->
+                            <p>Paytm</p>
+                        </button>
+                        <button class="payment-button" id="stripe-button">
+                            <i class="fab fa-stripe fa-2x"></i>
                             <p>Stripe</p>
-                        </div>
+                        </button>
                     </div>
+            
+                    <div class="qr-code" id="google-pay-qr" style="display: none;">
+                        <img src="google pay.jpg" alt="Google Pay QR Code">
+                        <p>Scan the QR code using Google Pay</p>
+                    </div>
+                    <div class="qr-code" id="paytm-qr" style="display: none;">
+                        <img src="paytem.jpg" alt="Paytm QR Code">
+                        <p>Scan the QR code using Paytm</p>
+                    </div>
+                    <!-- Add similar div for Stripe or other payment methods if required -->
+            
                     <form id="payment-form" action="https://usebasin.com/f/6bfedd3896c1" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                         
                         </div>
                         <div class="form-group">
                             <label for="technologyname">Technology Name</label>
@@ -117,11 +125,10 @@
                         <button type="submit" class="btn-primary">Confirm Payment</button>
                     </form>
                     <div id="form-feedback" class="form-feedback" style="display: none;">
-                         <p>Thank you! Your payment details have been received. Your premium roadmap will be sent to your email within 1-2 hours</p>
+                        <p>Thank you! Your payment details have been received. Your premium roadmap will be sent to your email within 1-2 hours.</p>
                     </div>
                 </div>
             </div>
-
             <div class="related-roadmaps">
                 <h3>Related Roadmaps</h3>
                 <div class="roadmap-container">
@@ -159,50 +166,66 @@
     </footer>
 
     <script>
+            // Script for handling the modal
         // Script for handling the modal
-        const modal = document.getElementById("payment-modal");
-        const btn = document.getElementById("buy-now");
-        const span = document.getElementsByClassName("close")[0];
-        const form = document.getElementById("payment-form");
-        const feedback = document.getElementById("form-feedback");
+const modal = document.getElementById("payment-modal");
+const btn = document.getElementById("buy-now");
+const span = document.getElementsByClassName("close")[0];
+const form = document.getElementById("payment-form");
+const feedback = document.getElementById("form-feedback");
 
-        btn.onclick = function() {
-            modal.style.display = "block";
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Script to show the correct QR code when a payment method button is clicked
+document.getElementById('google-pay-button').onclick = function() {
+    document.getElementById('google-pay-qr').style.display = 'block';
+    document.getElementById('paytm-qr').style.display = 'none';
+    // Hide other QR codes if necessary
+}
+
+document.getElementById('paytm-button').onclick = function() {
+    document.getElementById('paytm-qr').style.display = 'block';
+    document.getElementById('google-pay-qr').style.display = 'none';
+    // Hide other QR codes if necessary
+}
+
+// Add similar onclick events for other payment buttons if needed
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
         }
-
-        span.onclick = function() {
-            modal.style.display = "none";
+    }).then(response => {
+        if (response.ok) {
+            form.reset(); // Reset form fields
+            feedback.style.display = 'block'; // Show feedback message
+        } else {
+            alert('There was a problem with the submission. Please try again.');
         }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            const formData = new FormData(form);
-
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    form.reset(); // Reset form fields
-                    feedback.style.display = 'block'; // Show feedback message
-                } else {
-                    alert('There was a problem with the submission. Please try again.');
-                }
-            }).catch(error => {
-                console.error('Error:', error);
-                alert('There was a problem with the submission. Please try again.');
-            });
-        });
+    }).catch(error => {
+        console.error('Error:', error);
+        alert('There was a problem with the submission. Please try again.');
+    });
+});
     </script>
 </body>
 </html>
