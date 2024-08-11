@@ -97,3 +97,10 @@ function confirmPayment(event, id) {
     alert('There was an issue confirming your payment. Please try again.');
   });
 }
+
+
+
+document.querySelector('.burger').addEventListener('click', () => {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+});

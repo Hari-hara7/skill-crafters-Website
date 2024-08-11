@@ -18,20 +18,24 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="logo">Skill Crafters</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="roadmaps.html">Roadmaps</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <input type="text" placeholder="Search..." class="search-bar">
+        <div class="logo">
+            <a href="index.html">Skill Crafters</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="roadmaps.html">Roadmaps</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
         </div>
     </header>
-
     <main>
         <section class="roadmaps-intro">
             <h1 class="anton-regular ">Our Technology Roadmaps</h1>
@@ -135,5 +139,11 @@
             <li><a href="#">Social Media Links</a></li>
         </ul>
     </footer>
+    <script>
+        document.querySelector('.burger').addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
+    </script>
 </body>
 </html>
