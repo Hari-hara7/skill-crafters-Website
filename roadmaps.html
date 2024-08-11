@@ -44,6 +44,14 @@
 
         <section class="technology-cards">
             <!-- Technology Card Example -->
+            <div id="loading-spinner">
+                <div class="dot-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            
             <div class="card">
                 <img src="Designer - 2024-07-02T193353.668.jpeg" alt="Frontend">
                 <h2 class="anton-regular ">Frontend Development</h2>
@@ -168,6 +176,12 @@
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
 });
+
+window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.body.classList.add('loaded');
+        }, 2000); // 2000 milliseconds = 2 seconds
+    });
     </script>
 </body>
 </html>

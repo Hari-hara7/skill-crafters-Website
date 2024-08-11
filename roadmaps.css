@@ -307,3 +307,61 @@ nav ul li a:hover {
         display: none;
     }
 }
+
+
+
+
+/* Loading Spinner Container */
+#loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(39, 39, 39, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Highest priority on the page */
+}
+
+/* Three Dots Spinner */
+.dot-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot-spinner div {
+    width: 15px;
+    height: 15px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    animation: dot-bounce 0.6s infinite alternate;
+}
+
+.dot-spinner div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot-spinner div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Bounce Animation for Dots */
+@keyframes dot-bounce {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-15px);
+        opacity: 0.6;
+    }
+}
+
+/* Hide the spinner after 2 seconds */
+body.loaded #loading-spinner {
+    display: none;
+}

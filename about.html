@@ -300,6 +300,63 @@ nav ul li a:hover {
     }
 }
 
+
+
+/* Loading Spinner Container */
+#loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 50, 50, 0.85); /* Slightly opaque background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Enhanced Three Dots Spinner */
+.dot-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.dot-spinner .dot {
+    width: 18px;
+    height: 18px;
+    background-color: #ffcc00; /* Bright gold */
+    border-radius: 50%;
+    animation: dot-flash 0.8s infinite ease-in-out;
+}
+
+.dot-spinner .dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot-spinner .dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Flashing Animation for Dots */
+@keyframes dot-flash {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+/* Hide the spinner after 2 seconds */
+body.loaded #loading-spinner {
+    display: none;
+}
+
     </style>
 </head>
 <body>
@@ -337,6 +394,14 @@ nav ul li a:hover {
                 </div>
             </div>
         </section>
+        <div id="loading-spinner">
+            <div class="dot-spinner">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        
         <!-- Bottom Navigation Bar -->
 <div class="bottom-nav">
     <a href="index.html" class="bottom-nav-item">
@@ -376,6 +441,13 @@ nav ul li a:hover {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
 });
+
+
+window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.body.classList.add('loaded');
+        }, 2000); // 2000 milliseconds = 2 seconds
+    });
     </script>
 </body>
 </html>
