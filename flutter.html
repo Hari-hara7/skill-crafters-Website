@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Development Roadmap - Skill Crafters</title>
+    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html">Skill Crafters</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="roadmaps.html">Roadmaps</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="roadmap-detail">
+            <div class="breadcrumb">
+                <a href="roadmaps.html">Roadmaps</a> &gt; <span>Flutter Development</span>
+            </div>
+
+            <div class="roadmap-header">
+                <i class="fab fa-flutter fa-4x"></i>
+                <div class="roadmap-info">
+                    <h2>Flutter Development Roadmap</h2>
+                    <p>Learn how to develop high-performance, natively compiled applications for mobile, web, and desktop from a single codebase using Flutter. This roadmap covers the key skills, tools, and best practices needed for successful Flutter development.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-highlights">
+                <h3>What You'll Learn:</h3>
+                <ul>
+                    <li>Introduction to Flutter: Overview and setup.</li>
+                    <li>Dart Programming Language: Basics and advanced concepts.</li>
+                    <li>Flutter Widgets: Understanding and using Flutter’s widget system.</li>
+                    <li>State Management: Different approaches and best practices.</li>
+                    <li>Building UI: Designing and implementing user interfaces.</li>
+                    <li>Integration and Deployment: Integrating with backend services and deploying apps.</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-resources">
+                <h3>Resources & Links:</h3>
+                <ul>
+                    <li><a href="#">Flutter Documentation</a></li>
+                    <li><a href="#">Dart Programming Language</a></li>
+                    <li><a href="#">Flutter Widgets Guide</a></li>
+                    <li><a href="#">State Management in Flutter</a></li>
+                    <li><a href="#">Building UIs with Flutter</a></li>
+                </ul>
+            </div>
+
+            <div class="pricing">
+                <h3>Pricing</h3>
+                <p>Get lifetime access to this roadmap and all its resources.</p>
+                <p class="price">₹69.99</p>
+                <button id="buy-now" class="btn-primary">Buy Now</button>
+            </div>
+
+            <!-- Payment Modal -->
+            <div id="payment-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Select Payment Method</h2>
+                    <div class="payment-options">
+                        <button class="payment-button" id="google-pay-button">
+                            <i class="fab fa-google-pay fa-2x"></i>
+                            <p>Google Pay</p>
+                        </button>
+                        <button class="payment-button" id="paytm-button">
+                            <i class="fab fa-paypal fa-2x"></i> <!-- Paytm does not have a Font Awesome icon, using PayPal as an alternative -->
+                            <p>Paytm</p>
+                        </button>
+                        <button class="payment-button" id="stripe-button">
+                            <i class="fab fa-stripe fa-2x"></i>
+                            <p>Stripe</p>
+                        </button>
+                    </div>
+            
+                    <div class="qr-code" id="google-pay-qr" style="display: none;">
+                        <img src="google pay.jpg" alt="Google Pay QR Code">
+                        <p>Scan the QR code using Google Pay</p>
+                    </div>
+                    <div class="qr-code" id="paytm-qr" style="display: none;">
+                        <img src="paytem.jpg" alt="Paytm QR Code">
+                        <p>Scan the QR code using Paytm</p>
+                    </div>
+                    <!-- Add similar div for Stripe or other payment methods if required -->
+            
+                    <form id="payment-form" action="https://usebasin.com/f/6bfedd3896c1" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="technologyname">Technology Name</label>
+                            <input type="text" id="technologyname" name="technologyname" placeholder="Enter the technology name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email ID</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transaction">Transaction Number</label>
+                            <input type="text" id="transaction" name="transaction" placeholder="Enter transaction number" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Confirm Payment</button>
+                    </form>
+                    <div id="form-feedback" class="form-feedback" style="display: none;">
+                        <p>Thank you! Your payment details have been received. Your premium roadmap will be sent to your email within 1-2 hours.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-roadmaps">
+                <h3>Related Roadmaps</h3>
+                <div class="roadmap-container">
+                    <div class="card">
+                        <i class="fab fa-flutter fa-4x"></i>
+                        <h4>Flutter Development</h4>
+                        <a href="roadmap-detail-flutter.html" class="view-roadmap">View Roadmap</a>
+                    </div>
+            
+                    <div class="card">
+                        <i class="fab fa-node fa-4x"></i>
+                        <h4>Backend Development</h4>
+                        <a href="roadmap-detail-backend.html" class="view-roadmap">View Roadmap</a>
+                    </div>
+            
+                    <div class="card">
+                        <i class="fas fa-code fa-4x"></i>
+                        <h4>Full Stack Development</h4>
+                        <a href="roadmap-detail-fullstack.html" class="view-roadmap">View Roadmap</a>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+           
+            <li><a href="privacy.html">Privacy Policy</a></li>
+           
+        </ul>
+        <p>&copy; 2024 Skill Crafters. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Script for handling the modal
+        const modal = document.getElementById("payment-modal");
+        const btn = document.getElementById("buy-now");
+        const span = document.getElementsByClassName("close")[0];
+        const form = document.getElementById("payment-form");
+        const feedback = document.getElementById("form-feedback");
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Script to show the correct QR code when a payment method button is clicked
+        document.getElementById('google-pay-button').onclick = function() {
+            document.getElementById('google-pay-qr').style.display = 'block';
+            document.getElementById('paytm-qr').style.display = 'none';
+        }
+
+        document.getElementById('paytm-button').onclick = function() {
+            document.getElementById('paytm-qr').style.display = 'block';
+            document.getElementById('google-pay-qr').style.display = 'none';
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset(); // Reset form fields
+                    feedback.style.display = 'block'; // Show feedback message
+                } else {
+                    alert('There was a problem with the submission. Please try again.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('There was a problem with the submission. Please try again.');
+            });
+        });
+
+        document.querySelector('.burger').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
