@@ -16,7 +16,7 @@
             <a href="index.html">Skill Crafters</a>
         </div>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="roadmaps.html">Roadmaps</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -24,6 +24,11 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </header>
 
     <!-- Main Content -->
@@ -224,7 +229,10 @@ form.addEventListener('submit', function(event) {
         alert('There was a problem with the submission. Please try again.');
     });
 });
-
+document.querySelector('.burger').addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
     </script>
 </body>
 </html>
