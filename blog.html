@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Skill Crafters</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background: url('2527292.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        }
+
+        header .logo a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 25px;
+        }
+
+        .burger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .blog-post {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for posts */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .blog-post h2 {
+            margin-top: 0;
+        }
+
+        .blog-post p {
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">Skill Crafters</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="roadmaps.html">Roadmaps</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-posts">
+            <article class="blog-post">
+                <h2>Understanding Full Stack Development</h2>
+                <p>Full stack development involves working on both the front-end and back-end parts of a web application. This article explores the key skills required to become a proficient full stack developer, including popular technologies and best practices.</p>
+                <a href="blog-post-full-stack.html" class="btn-primary">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>The Rise of Artificial Intelligence</h2>
+                <p>Artificial Intelligence is transforming various industries by automating tasks and enabling smarter decision-making. Learn about the latest trends in AI and its impact on technology and business.</p>
+                <a href="blog-post-ai.html" class="btn-primary">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>Getting Started with DevOps</h2>
+                <p>DevOps practices aim to improve collaboration between development and operations teams, leading to faster and more reliable software delivery. Discover the essential tools and techniques for implementing DevOps in your organization.</p>
+                <a href="blog-post-devops.html" class="btn-primary">Read More</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        
+        <p>&copy; 2024 Skill Crafters. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.burger').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
