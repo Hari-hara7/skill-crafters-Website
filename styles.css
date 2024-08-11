@@ -7,14 +7,12 @@ body {
   background-size: cover;
   overflow-x: hidden;
 }
+
 .anton-regular {
   font-family: "Anton", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-
-
-
 
 /* Hero Section */
 .hero {
@@ -29,12 +27,12 @@ body {
 }
 
 .hero h1 {
-  font-size: 3.5em;
+  font-size: 3em; /* Reduced for better responsiveness */
   margin: 0;
 }
 
 .hero p {
-  font-size: 1.5em;
+  font-size: 1.2em; /* Reduced for better responsiveness */
   margin: 20px 0;
 }
 
@@ -67,7 +65,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  width: 300px;
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 300px; /* Added max-width for better control */
   transition: transform 0.3s;
 }
 
@@ -149,7 +148,7 @@ footer ul li a:hover {
   padding: 20px;
   border-radius: 10px;
   position: relative;
-  width: 80%;
+  width: 90%; /* Adjusted for better responsiveness */
   max-width: 600px;
 }
 
@@ -163,6 +162,7 @@ footer ul li a:hover {
 
 .payment-options {
   display: flex;
+  flex-wrap: wrap; /* Added for better responsiveness */
   gap: 20px;
 }
 
@@ -201,8 +201,7 @@ form button:hover {
   color: #ffffff;
 }
 
-
-/* General Styles */
+/* Header and Navigation Styles */
 header {
   display: flex;
   justify-content: space-between;
@@ -260,55 +259,96 @@ nav ul li a:hover {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5em; /* Further reduction for smaller screens */
+  }
+
+  .hero p {
+    font-size: 1em; /* Further reduction for smaller screens */
+  }
+
   nav ul {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background: url('6005990.jpg') no-repeat center center;
-      background-size: cover;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      z-index: 1;
-      padding: 20px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: url('6005990.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    padding: 20px;
   }
 
   nav ul.active {
-      display: flex;
+    display: flex;
   }
 
   nav ul li {
-      margin: 15px 0;
-      text-align: center;
+    margin: 15px 0;
+    text-align: center;
   }
 
   nav ul li a {
-      font-size: 20px;
-      transition: color 0.3s;
+    font-size: 20px;
+    transition: color 0.3s;
   }
 
   nav ul li a:hover {
-      color: #58a6ff; /* Neon Blue on hover */
+    color: #58a6ff; /* Neon Blue on hover */
   }
 
   .burger {
-      display: flex;
+    display: flex;
   }
 
   .burger div {
-      background-color: white;
+    background-color: white;
   }
 
   .burger.active div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 5px);
   }
 
   .burger.active div:nth-child(2) {
-      opacity: 0;
+    opacity: 0;
   }
 
   .burger.active div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .featured-roadmaps {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    padding: 30px 10px; /* Adjusted padding */
+  }
+
+  .card {
+    width: 90%; /* Adjusted width for better display on small screens */
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2em; /* Further reduction for small screens */
+  }
+
+  .hero p {
+    font-size: 0.9em; /* Further reduction for small screens */
+  }
+
+  .cta-button {
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 1em;
+  }
+
+  header .logo a {
+    font-size: 20px; /* Reduced logo font size */
+  }
+
+  nav ul li a {
+    font-size: 16px; /* Reduced font size for nav items */
   }
 }
