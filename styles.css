@@ -370,3 +370,64 @@ nav ul li a:hover {
   font-weight: <weight>;
   font-style: normal;
 }
+
+
+/* Bottom Navigation Bar with Glassmorphism */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 15px 15px 0 0; /* Rounded top corners */
+  display: none; /* Initially hide the bottom nav */
+}
+
+/* Bottom Navigation Items */
+.bottom-nav-item {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.bottom-nav-item i {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.bottom-nav-item span {
+  display: block;
+  font-size: 12px;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+}
+
+.bottom-nav-item:hover {
+  color: #ffcc00;
+}
+
+/* Show bottom navigation only on screens smaller than 769px */
+@media (max-width: 768px) {
+  .bottom-nav {
+      display: flex;
+  }
+}
+
+/* Hide bottom nav on larger screens */
+@media (min-width: 769px) {
+  .bottom-nav {
+      display: none;
+  }
+}
+

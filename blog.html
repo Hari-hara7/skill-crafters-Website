@@ -6,6 +6,7 @@
     <title>Blog - Skill Crafters</title>
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="scripts.js" defer></script>
     <style>
         body {
@@ -187,6 +188,66 @@ nav ul li a:hover {
         .btn-primary:hover {
             background-color: #0056b3;
         }
+
+        /* Bottom Navigation Bar with Glassmorphism */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+    display: none; /* Initially hide the bottom nav */
+}
+
+/* Bottom Navigation Items */
+.bottom-nav-item {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.bottom-nav-item i {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.bottom-nav-item span {
+    display: block;
+    font-size: 12px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+.bottom-nav-item:hover {
+    color: #ffcc00;
+}
+
+/* Show bottom navigation only on screens smaller than 769px */
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: flex;
+    }
+}
+
+/* Hide bottom nav on larger screens */
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -231,6 +292,30 @@ nav ul li a:hover {
                 <a href="blog-post-devops.html" class="btn-primary">Read More</a>
             </article>
         </section>
+        \<!-- Bottom Navigation Bar -->
+<div class="bottom-nav">
+    <a href="index.html" class="bottom-nav-item">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+    <a href="roadmaps.html" class="bottom-nav-item">
+        <i class="fas fa-map"></i>
+        <span>Roadmaps</span>
+    </a>
+    <a href="blog.html" class="bottom-nav-item">
+        <i class="fas fa-blog"></i>
+        <span>Blog</span>
+    </a>
+    <a href="about.html" class="bottom-nav-item">
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+    </a>
+    <a href="contact.html" class="bottom-nav-item">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+    </a>
+</div>
+
     </main>
 
     <footer>
