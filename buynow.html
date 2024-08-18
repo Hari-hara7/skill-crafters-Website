@@ -8,165 +8,175 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f6f9fc, #e9eff1);
+            background: linear-gradient(135deg, #0d1117, #161b22);
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #f0f6fc;
         }
 
         .container {
-            background: #fff;
+            background-color: #161b22;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
             width: 100%;
-            max-width: 600px;
-            padding: 20px;
-            box-sizing: border-box;
-            position: relative;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
 
-        h2 {
-            margin: 0 0 20px;
-            text-align: center;
-            color: #333;
+        .container h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
         }
 
         .payment-options {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between payment options */
+            margin-bottom: 30px;
         }
 
         .payment-button {
-            flex: 1;
-            padding: 15px;
-            margin: 0 10px;
+            background-color: #0d1117;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
+            padding: 20px;
+            color: #f0f6fc;
+            font-size: 1.2em;
             cursor: pointer;
-            background-color: #f8f9fa;
-            transition: background-color 0.3s ease;
             text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            height: 150px; /* Set fixed height for buttons */
         }
 
         .payment-button:hover {
-            background-color: #e2e6ea;
+            background-color: #58a6ff;
+            transform: scale(1.05);
         }
 
         .payment-button i {
-            font-size: 2rem;
-            color: #333;
-        }
-
-        .payment-button p {
-            margin: 10px 0 0;
-            font-size: 1rem;
-            color: #333;
+            margin-bottom: 10px;
         }
 
         .qr-code {
             display: none;
             text-align: center;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
 
         .qr-code img {
-            max-width: 80%;
+            width: 200px;
             height: auto;
-            border-radius: 8px;
-        }
-
-        .change-option-button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .change-option-button:hover {
-            background-color: #0056b3;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
+            border: 2px solid #f0f6fc;
+            border-radius: 10px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            color: #555;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
         }
 
         .form-group input {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            box-sizing: border-box;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            background-color: #161b22;
+            color: #f0f6fc;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #58a6ff;
+            box-shadow: 0 0 5px rgba(88, 166, 255, 0.5);
+        }
+
+        .form-group input::placeholder {
+            color: #8b949e;
         }
 
         .btn-primary {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #58a6ff;
+            color: #0d1117;
+            padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
+            background-color: #1f6feb;
+            transform: scale(1.05);
         }
 
         .form-feedback {
-            text-align: center;
-            color: #28a745;
-            margin-top: 20px;
+            background-color: #007700;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
         }
 
-        @media (max-width: 768px) {
+        .loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #f0f6fc;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
             .payment-options {
                 flex-direction: column;
+                align-items: center;
             }
 
             .payment-button {
-                margin: 5px 0;
+                width: 80%; /* Increase button width on small screens */
+                height: auto; /* Remove fixed height on small screens */
             }
         }
+
+       
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Complete Your Payment</h2>
-
+        <h2>Select Payment Method</h2>
         <div class="payment-options">
             <button class="payment-button" id="google-pay-button">
-                <i class="fab fa-google-pay"></i>
+                <i class="fab fa-google-pay fa-2x"></i>
                 <p>Google Pay</p>
             </button>
             <button class="payment-button" id="paytm-button">
-                <i class="fab fa-paypal"></i> <!-- Using PayPal as a placeholder for Paytm -->
+                <i class="fab fa-paypal fa-2x"></i> <!-- Paytm does not have a Font Awesome icon, using PayPal as an alternative -->
                 <p>Paytm</p>
             </button>
             <button class="payment-button" id="stripe-button">
-                <i class="fab fa-stripe"></i>
+                <i class="fab fa-stripe fa-2x"></i>
                 <p>Stripe</p>
             </button>
         </div>
@@ -180,8 +190,6 @@
             <p>Scan the QR code using Paytm</p>
         </div>
 
-        <button class="change-option-button" id="change-payment-option">Change Payment Option</button>
-
         <form id="payment-form" action="https://usebasin.com/f/6bfedd3896c1" method="POST">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -189,7 +197,7 @@
             </div>
             <div class="form-group">
                 <label for="technologyname">Technology Name</label>
-                <input type="text" id="technologyname" name="technologyname" placeholder="Enter technology name" required>
+                <input type="text" id="technologyname" name="technologyname" placeholder="Enter the technology name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email ID</label>
@@ -207,32 +215,34 @@
         </div>
     </div>
 
+    <div id="loading-spinner" class="loading-spinner">
+        Loading...
+    </div>
+
     <script>
-        // Script to handle the QR code display
-        document.getElementById('google-pay-button').onclick = function() {
-            document.getElementById('google-pay-qr').style.display = 'block';
-            document.getElementById('paytm-qr').style.display = 'none';
+        const paymentButtons = document.querySelectorAll('.payment-button');
+        const qrCodes = document.querySelectorAll('.qr-code');
+
+        function showQRCode(id) {
+            qrCodes.forEach(code => code.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
         }
 
-        document.getElementById('paytm-button').onclick = function() {
-            document.getElementById('paytm-qr').style.display = 'block';
-            document.getElementById('google-pay-qr').style.display = 'none';
-        }
-
-        // Add similar onclick events for other payment buttons if needed
-
-        // Script to handle changing payment options
-        document.getElementById('change-payment-option').onclick = function() {
-            document.getElementById('google-pay-qr').style.display = 'none';
-            document.getElementById('paytm-qr').style.display = 'none';
-        }
+        paymentButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const qrCodeId = this.id.replace('-button', '-qr');
+                showQRCode(qrCodeId);
+            });
+        });
 
         // Handle form submission
         const form = document.getElementById('payment-form');
         const feedback = document.getElementById('form-feedback');
+        const loadingSpinner = document.getElementById('loading-spinner');
 
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
+            loadingSpinner.style.display = 'block'; // Show loading spinner
 
             const formData = new FormData(form);
 
@@ -243,6 +253,7 @@
                     'Accept': 'application/json'
                 }
             }).then(response => {
+                loadingSpinner.style.display = 'none'; // Hide loading spinner
                 if (response.ok) {
                     form.reset(); // Reset form fields
                     feedback.style.display = 'block'; // Show feedback message
@@ -250,6 +261,7 @@
                     alert('There was a problem with the submission. Please try again.');
                 }
             }).catch(error => {
+                loadingSpinner.style.display = 'none'; // Hide loading spinner
                 console.error('Error:', error);
                 alert('There was a problem with the submission. Please try again.');
             });
