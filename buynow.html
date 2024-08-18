@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f6f9fc, #e9eff1);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .payment-button {
+            flex: 1;
+            padding: 15px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #f8f9fa;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .payment-button:hover {
+            background-color: #e2e6ea;
+        }
+
+        .payment-button i {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .payment-button p {
+            margin: 10px 0 0;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .qr-code {
+            display: none;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .qr-code img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .change-option-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .change-option-button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .form-feedback {
+            text-align: center;
+            color: #28a745;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .payment-options {
+                flex-direction: column;
+            }
+
+            .payment-button {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Complete Your Payment</h2>
+
+        <div class="payment-options">
+            <button class="payment-button" id="google-pay-button">
+                <i class="fab fa-google-pay"></i>
+                <p>Google Pay</p>
+            </button>
+            <button class="payment-button" id="paytm-button">
+                <i class="fab fa-paypal"></i> <!-- Using PayPal as a placeholder for Paytm -->
+                <p>Paytm</p>
+            </button>
+            <button class="payment-button" id="stripe-button">
+                <i class="fab fa-stripe"></i>
+                <p>Stripe</p>
+            </button>
+        </div>
+
+        <div class="qr-code" id="google-pay-qr">
+            <img src="google pay.jpg" alt="Google Pay QR Code">
+            <p>Scan the QR code using Google Pay</p>
+        </div>
+        <div class="qr-code" id="paytm-qr">
+            <img src="paytem.jpg" alt="Paytm QR Code">
+            <p>Scan the QR code using Paytm</p>
+        </div>
+
+        <button class="change-option-button" id="change-payment-option">Change Payment Option</button>
+
+        <form id="payment-form" action="https://usebasin.com/f/6bfedd3896c1" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="technologyname">Technology Name</label>
+                <input type="text" id="technologyname" name="technologyname" placeholder="Enter technology name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="transaction">Transaction Number</label>
+                <input type="text" id="transaction" name="transaction" placeholder="Enter transaction number" required>
+            </div>
+            <button type="submit" class="btn-primary">Confirm Payment</button>
+        </form>
+
+        <div id="form-feedback" class="form-feedback" style="display: none;">
+            <p>Thank you! Your payment details have been received. Your premium roadmap will be sent to your email within 1-2 hours.</p>
+        </div>
+    </div>
+
+    <script>
+        // Script to handle the QR code display
+        document.getElementById('google-pay-button').onclick = function() {
+            document.getElementById('google-pay-qr').style.display = 'block';
+            document.getElementById('paytm-qr').style.display = 'none';
+        }
+
+        document.getElementById('paytm-button').onclick = function() {
+            document.getElementById('paytm-qr').style.display = 'block';
+            document.getElementById('google-pay-qr').style.display = 'none';
+        }
+
+        // Add similar onclick events for other payment buttons if needed
+
+        // Script to handle changing payment options
+        document.getElementById('change-payment-option').onclick = function() {
+            document.getElementById('google-pay-qr').style.display = 'none';
+            document.getElementById('paytm-qr').style.display = 'none';
+        }
+
+        // Handle form submission
+        const form = document.getElementById('payment-form');
+        const feedback = document.getElementById('form-feedback');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset(); // Reset form fields
+                    feedback.style.display = 'block'; // Show feedback message
+                } else {
+                    alert('There was a problem with the submission. Please try again.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('There was a problem with the submission. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
