@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="path/to/your/image.jpg" alt="Skill Crafters Logo" />
+  <img src="skill crafters.png" alt="Skill Crafters Logo" />
 </p>
 
 # Skill Crafters
